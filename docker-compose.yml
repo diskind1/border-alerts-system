@@ -10,7 +10,7 @@ services:
       - mongo_data:/data/db
     networks:
       - pipeline-net
-  mongo-init:
+  mongo:
     image: mongo:7
     container_name: mongo-init
     restart: unless-stopped
@@ -55,7 +55,7 @@ services:
     depends_on:
       - mongodb
       - kafka
-      - mongo-init
+      - mongo
     env_file: .env
     networks:
       - pipeline-net
@@ -69,8 +69,8 @@ services:
     networks:
       - pipeline-net
   analytics-api:
-    build: ./api
-    container_name: api
+    build: ./analytics-api
+    container_name: analytics-api
     restart: unless-stopped
     depends_on:
       - mongo
