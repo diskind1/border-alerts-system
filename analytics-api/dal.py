@@ -1,69 +1,41 @@
-from connection import get_conn
+from mongo_connection import mongo_conn
 
 
 def alerts_by_border_and_priority():
-    conn = get_conn()
-    cur = conn.cursor(dictionary=True)
-
-    cur.execute("""
+    col = mongo_conn()
+    docs = list(col.find(
         
-    """,)
-
-    rows = cur.fetchall()
-    cur.close()
-    conn.close()
-    return rows
+        ))
+    return docs
 
 def top_urgent_zones():
-    conn = get_conn()
-    cur = conn.cursor(dictionary=True)
-
-    cur.execute("""
+    col = mongo_conn()
+    docs = list(col.find(
         
-    """,)
+        ))
+    return docs
 
-    rows = cur.fetchall()
-    cur.close()
-    conn.close()
-    return rows
 
 def distance_distribution():
-    conn = get_conn()
-    cur = conn.cursor(dictionary=True)
-
-    cur.execute("""
+    col = mongo_conn()
+    docs = list(col.find(
         
-    """,)
-
-    rows = cur.fetchall()
-    cur.close()
-    conn.close()
-    return rows
+        ))
+    return docs
 
 
 def low_visibility_high_activity():
-    conn = get_conn()
-    cur = conn.cursor(dictionary=True)
-
-    cur.execute("""
+    col = mongo_conn()
+    docs = list(col.find(
         
-    """,)
-
-    rows = cur.fetchall()
-    cur.close()
-    conn.close()
-    return rows
+        ))
+    return docs
 
 
 def hot_zones():
-    conn = get_conn()
-    cur = conn.cursor(dictionary=True)
-
-    cur.execute("""
+    col = mongo_conn()
+    docs = list(col.find(
         
-    """,)
+        ))
+    return docs
 
-    rows = cur.fetchall()
-    cur.close()
-    conn.close()
-    return rows
